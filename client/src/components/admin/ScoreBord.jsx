@@ -35,7 +35,7 @@ const ScoreBord = () => {
       const [result, setResult] = useState([]);
       
       useEffect(() => {
-        axios.get("http://localhost:4010/getResults")
+        axios.get("https://quizzapp-llom.onrender.com/getResults")
         .then((res) => {
             setResult(res.data);
         })

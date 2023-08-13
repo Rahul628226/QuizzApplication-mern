@@ -16,7 +16,7 @@ const ViewQuestion = () => {
     const { id } = location.state || { id: null };
 
     useEffect(() => {
-        axios.get("http://localhost:4010/quiz")
+        axios.get("https://quizzapp-llom.onrender.com/quiz")
             .then((res) => {
                 console.log(res.data);
                 const quiz = res.data.find((quizItem) => quizItem._id === id);
@@ -44,7 +44,7 @@ const ViewQuestion = () => {
     
     
 const deleteQuestian=(id)=>{
-    axios.delete(`http://localhost:4010/questionDelete/${id}`)
+    axios.delete(`https://quizzapp-llom.onrender.com/questionDelete/${id}`)
     .then(()=>{
         alert("Deleted Successfully");
         navigate("/viewQuiz");

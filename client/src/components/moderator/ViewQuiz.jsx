@@ -14,7 +14,7 @@ const ViewQuiz = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:4010/quiz")
+        axios.get("https://quizzapp-llom.onrender.com/quiz")
         .then((res) => {
             const moderatorData = res.data.filter((quiz)=>quiz.userId === user)
             console.log(res.data);

@@ -15,7 +15,7 @@ const ViewAllQuiz = () => {
   const [qdata, setQdata] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:4010/quiz")
+    axios.get("https://quizzapp-llom.onrender.com/quiz")
       .then((res) => {
         const quizdt = res.data.filter((quizItem) => quizItem.status === 'approved');
         setQuizData(quizdt);

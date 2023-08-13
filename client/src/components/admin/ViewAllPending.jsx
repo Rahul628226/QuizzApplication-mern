@@ -11,7 +11,7 @@ const ViewAllPending = () => {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get("http://localhost:4010/quiz")
+        axios.get("https://quizzapp-llom.onrender.com/quiz")
         .then((res)=>{
             const quizdt = res.data.filter((quizItem)=>quizItem.status === 'pending');
             setDt(quizdt);

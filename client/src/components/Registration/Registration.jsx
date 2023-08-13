@@ -38,7 +38,7 @@ const Registration = () => {
         }
         if (inputData.password === inputData.confirmPassword) {
           axios
-            .post("http://localhost:4010/reg", inputData)
+            .post("https://quizzapp-llom.onrender.com/reg", inputData)
             .then(() => {
               alert("Registered Successfully");
               setInputData({

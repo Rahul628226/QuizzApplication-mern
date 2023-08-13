@@ -69,7 +69,7 @@ const TagSection = ({ tag, onUpdateTag, onDeleteTag }) => {
 
   const handleDeleteTag = async () => {
     try {
-      const response = await fetch(`http://localhost:4010/tags/${tag._id}`, {
+      const response = await fetch(`https://quizzapp-llom.onrender.com/tags/${tag._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const TagSection = ({ tag, onUpdateTag, onDeleteTag }) => {
   const handleUpdateTag = async () => {
     const updatedTag = { ...tag, tagName, description, modules };
     try {
-      const response = await fetch(`http://localhost:4010/tags/${tag._id}`, {
+      const response = await fetch(`https://quizzapp-llom.onrender.com/tags/${tag._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -248,7 +248,7 @@ const TeachingPage = () => {
     try {
       const currentDate = new Date().toISOString();
 
-      const response = await fetch('http://localhost:4010/tags', {
+      const response = await fetch('https://quizzapp-llom.onrender.com/tags', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -271,7 +271,7 @@ const TeachingPage = () => {
         toast.success('Tag saved successfully!');
 
         // Fetch the updated tags from the server and update the state
-        const updatedTagsResponse = await fetch('http://localhost:4010/tags');
+        const updatedTagsResponse = await fetch('https://quizzapp-llom.onrender.com/tags');
         if (updatedTagsResponse.ok) {
           const tagsData = await updatedTagsResponse.json();
           setTags(tagsData);
@@ -288,7 +288,7 @@ const TeachingPage = () => {
 
   const handleDeleteTag = async (deletedTagId) => {
     try {
-      const response = await fetch(`http://localhost:4010/tags/${deletedTagId}`, {
+      const response = await fetch(`https://quizzapp-llom.onrender.com/tags/${deletedTagId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -312,7 +312,7 @@ const TeachingPage = () => {
 
   const handleUpdateTag = async (updatedTag) => {
     try {
-      const response = await fetch(`http://localhost:4010/tags/${updatedTag._id}`, {
+      const response = await fetch(`https://quizzapp-llom.onrender.com/tags/${updatedTag._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -338,7 +338,7 @@ const TeachingPage = () => {
   useEffect(() => {
     const fetchTags = async () => {
       try {
-        const response = await fetch('http://localhost:4010/tags');
+        const response = await fetch('https://quizzapp-llom.onrender.com/tags');
         if (response.ok) {
           const tagsData = await response.json();
           setTags(tagsData);

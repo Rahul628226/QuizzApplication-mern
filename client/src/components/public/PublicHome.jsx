@@ -21,7 +21,7 @@ const PublicHome = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4010/quiz')
+      .get('https://quizzapp-llom.onrender.com/quiz')
       .then((res) => {
         console.log(res.data);
         setDt(res.data);

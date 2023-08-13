@@ -39,7 +39,7 @@ const Login = () => {
                 alert("Please fill all the field");
                 return;
             }
-             axios.post('http://localhost:4010/login',{email,password})
+             axios.post('https://quizzapp-llom.onrender.com/login',{email,password})
              .then((response)=>{
                 console.log(response.data);
                 alert(response.data);

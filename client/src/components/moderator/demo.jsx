@@ -63,7 +63,7 @@ const CreateQuiz = () => {
       
   
       // Send the quiz data to the backend
-      await axios.post("http://localhost:4010/quizQuestion", quizData)
+      await axios.post("https://quizzapp-llom.onrender.com/quizQuestion", quizData)
         .then(() => {
           alert("Quiz data saved successfully");
           console.log("success");
@@ -94,7 +94,7 @@ const CreateQuiz = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:4010/tags")
+    axios.get("https://quizzapp-llom.onrender.com/tags")
       .then((res) => {
         setTagData(res.data);
       })

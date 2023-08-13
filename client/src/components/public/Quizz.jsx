@@ -53,13 +53,13 @@ const Quizz = () => {
   const [notAttemptedCount, setNotAttemptedCount] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost:4010/tags')
+    axios.get('https://quizzapp-llom.onrender.com/tags')
       .then(response => setTags(response.data))
       .catch(error => console.error(error));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:4010/quiz")
+    axios.get("https://quizzapp-llom.onrender.com/quiz")
       .then((res) => {
         const quiz = res.data.find((quizItem) => quizItem.status === 'approved' && quizItem.topic === selectedTag && quizItem.sub === currentModule.moduleName);
         if (quiz) {
@@ -142,7 +142,7 @@ const Quizz = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:4010/saveResult', resultData);
+      const response = await axios.post('https://quizzapp-llom.onrender.com/saveResult', resultData);
       console.log('Result data saved:', response.data);
     } catch (error) {
       console.error('Error saving result data:', error);

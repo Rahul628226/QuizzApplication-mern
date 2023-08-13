@@ -18,7 +18,7 @@ const AttemptQuiz = () => {
     
 
     useEffect(() => {
-        axios.get("http://localhost:4010/quiz")
+        axios.get("https://quizzapp-llom.onrender.com/quiz")
             .then((res) => {
                 console.log(res.data);
                 setQuizData(res.data)

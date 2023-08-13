@@ -25,7 +25,7 @@ const Profile = () => {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:4010/userdata")
+        axios.get("https://quizzapp-llom.onrender.com/userdata")
           .then((res) => {
             const profile = res.data.filter((item) => (item.email === user))
             console.log(profile);
@@ -64,7 +64,7 @@ const Profile = () => {
     const updateData=(id)=>{
         
         if(inputData.password === inputData.confirmPassword){
-            axios.put(`http://localhost:4010/userUpdate/${id}`,inputData)
+            axios.put(`https://quizzapp-llom.onrender.com/userUpdate/${id}`,inputData)
             .then(()=>{
                 alert("Profile Updated Successfully");
                 handleClose();

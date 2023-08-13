@@ -12,7 +12,7 @@ const ViewAndApprove =()=>{
     const {id} = location.state || {id:null}
 
     useEffect(() => {
-        axios.get("http://localhost:4010/quiz")
+        axios.get("https://quizzapp-llom.onrender.com/quiz")
             .then((res) => {
                 console.log(res.data);
                 const quiz = res.data.find((quizItem) => quizItem._id === id);
@@ -37,7 +37,7 @@ const ViewAndApprove =()=>{
         const quizData ={
             status:'approved',
         }
-        axios.put(`http://localhost:4010/quizupdate/${id}`,quizData
+        axios.put(`https://quizzapp-llom.onrender.com/quizupdate/${id}`,quizData
         )
         .then((res) => {
             console.log('Quiz Updated:', res.data);
@@ -57,7 +57,7 @@ const ViewAndApprove =()=>{
         const updateData ={
             status:'rejected',
         }
-        axios.put(`http://localhost:4010/quizupdate/${id}`,updateData)
+        axios.put(`https://quizzapp-llom.onrender.com/quizupdate/${id}`,updateData)
         .then(()=>{
             alert("Rejected Successfully");
             naviagate('/viewallPending');
